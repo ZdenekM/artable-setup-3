@@ -23,7 +23,7 @@
       <arg name="output" value="log"/>
     </include>
 
-    <include file="$(find art_projected_gui)/launch/projector.launch">
+    <include file="$(find art_projector)/launch/projector.launch">
       <arg name="screen_number" value="1"/>
       <arg name="machine" value="localhost"/>
     </include>
