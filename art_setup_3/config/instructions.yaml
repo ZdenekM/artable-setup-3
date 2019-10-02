@@ -1,0 +1,78 @@
+pick:
+  - PickFromPolygon
+place:
+  - PlaceToPose
+  - PlaceToContainer
+
+using_object:
+  - PickFromPolygon
+  - PlaceToPose
+  - PlaceToContainer
+
+using_pose:
+  - PlaceToPose
+
+using_polygon:
+  - PickFromPolygon
+  - PlaceToContainer
+
+runnable_during_learning:
+  - GetReady
+  - PickFromPolygon
+  - PlaceToPose
+  - PlaceToContainer
+
+
+# gui classes are expected in package.gui module
+# brain classes are expected in package.brain module
+
+instructions:
+
+  GetReady:
+      gui:
+        package: art_instructions
+        learn: GetReadyLearn
+        run: GetReadyRun
+      brain:
+        package: art_instructions
+        fsm: GetReadyFSM
+
+  PickFromPolygon:
+      gui:
+        package: art_instructions
+        learn: PickFromPolygonLearn
+        run: PickFromPolygonRun
+        vis: PickFromPolygonVis
+      brain:
+        package: art_instructions
+        fsm: PickFromPolygonFSM
+
+  PlaceToPose:
+      gui:
+        package: art_instructions
+        learn: PlaceToPoseLearn
+        run: PlaceToPoseRun
+        vis: PlaceToPoseVis
+      brain:
+        package: art_instructions
+        fsm: PlaceToPoseFSM
+
+  PlaceToContainer:
+      gui:
+        package: art_instructions
+        learn: PlaceToContainerLearn
+        run: PlaceToContainerRun
+        params:
+          show_area_run: True
+      brain:
+        package: art_instructions
+        fsm: PlaceToContainerFSM
+
+  Dummy:
+      gui:
+        package: art_instructions
+        learn: WaitUntilUserFinishesLearn
+        run: WaitUntilUserFinishesRun
+      brain:
+        package: art_instructions
+        fsm: DummyFSM

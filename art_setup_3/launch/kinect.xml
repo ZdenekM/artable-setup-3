@@ -6,7 +6,7 @@
 <include ns="/art/$(arg machine_name)" file="$(find kinect2_bridge)/launch/kinect2_bridge.launch">
       <arg name="machine" value="$(arg machine_name)"/>
       <arg name="base_name_tf" value="$(arg machine_name)_kinect2"/>
-      <arg name="respawn" value="false"/>
+      <arg name="respawn" value="true"/>
       <arg name="publish_tf" value="true"/>
       <arg name="max_depth" value="1.8"/>
 </include>
